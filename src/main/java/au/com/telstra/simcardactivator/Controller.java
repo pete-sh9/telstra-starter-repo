@@ -20,16 +20,19 @@ import java.util.Optional;
 @RestController
 public class Controller {
 
-    @Autowired
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
+    private final SimCardService service;
 
     @Autowired
-    private SimCardService service;
+    public Controller(RestTemplate restTemplate, SimCardService service) {
+        this.restTemplate = restTemplate;
+        this.service = service;
+    }
 
 
     @PostMapping("/activate")
     public ResponseEntity<String> activateSimCard(@RequestBody SimCardRequest request) throws JsonProcessingException {
-        String microserviceUrl = "http://localhost:8444/actuate";  // Replace with actual microservice URL
+        String microserviceUrl = "http://localhost:8444/actuate";
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);

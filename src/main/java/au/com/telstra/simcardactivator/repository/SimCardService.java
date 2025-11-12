@@ -10,8 +10,11 @@ import java.util.Optional;
 @Service
 public class SimCardService {
 
-    @Autowired
-    private SimRepository repository;
+    private final SimRepository repository;
+
+    public SimCardService (SimRepository repository) {
+        this.repository = repository;
+    }
 
     public SimCardDB save(SimCardDB simCard) {
         return repository.save(simCard);

@@ -2,7 +2,6 @@ package stepDefinitions;
 
 import au.com.telstra.simcardactivator.SimCardActivator;
 import io.cucumber.spring.CucumberContextConfiguration;
-import org.mockito.internal.matchers.Null;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootContextLoader;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,7 +10,6 @@ import org.springframework.test.context.ContextConfiguration;
 
 
 import io.cucumber.java.en.*;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
 import static org.junit.jupiter.api.Assertions.*;
 
